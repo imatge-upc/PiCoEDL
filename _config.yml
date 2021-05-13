@@ -14,7 +14,7 @@ markdown: kramdown
 
 
 ### content configuration ###
-title:       "PicoEDL: Discovery and Learning of Minecraft Navigation Goals\\from Pixels and Coordinates"
+title:       "PicoEDL: Discovery and Learning of Minecraft Navigation Goals from Pixels and Coordinates"
 keywords:    "reinforcement learning, deep learning, self supervised learning, unsupervised learning"
 description: "Explore, Discover and Learn (EDL) on pixels."
 source_link: "https://github.com/imatge-upc/PiCoEDL"
