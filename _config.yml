@@ -14,10 +14,10 @@ markdown: kramdown
 
 
 ### content configuration ###
-title:       "Curriculum Learning for Recurrent Video Object Segmentation"
-keywords:    "computer vision, deep learning, whatever"
-description: "Study of curriculum learning strategies on the cars class of the KITTI-MOTS dataset for one-shot video object segmentation."
-source_link: "https://github.com/imatge-upc/rvos-mots"
+title:       "Discovery and Learning of Minecraft Navigation Goals\\from Pixels and Coordinates"
+keywords:    "reinforcement learning, deep learning, self supervised learning, unsupervised learning"
+description: "Deployment of the Explore, Discover and Learn (EDL) paradigm over pixels.."
+source_link: "https://github.com/imatge-upc/pixelcoordEDL"
 favicon:     "img/favicon.ico"
 touch_icon:  "img/apple-touch-icon.png"
 # google_analytics_key: UA-49607422-1 ## put YOUR key here to enable tracking! (blank to disable)
