@@ -1,0 +1,61 @@
+outdir: 'rl.20.1.2_comb'
+env: 'MineRLNavigate-v0'
+world: 'CustomWorld_0'
+logging_level: 20
+interactor: no
+downstream_task: no
+
+seed: 0
+gpu: 0
+
+demo: no
+monitor: no
+load: null
+eval_n_runs: 10
+sampling: 'uniform'
+
+agent: 'CategoricalDoubleDQN'
+arch: 'distributed_dueling'
+
+max_episode_steps: 500
+batch_size: 64
+update_interval: 4
+frame_skip: 10
+gamma: 0.99
+clip_delta: yes
+num_step_return: 1
+lr: 2.5e-4
+adam_eps: 1.e-8
+
+batch_accumulator: 'sum'
+gray_scale: no
+frame_stack: no
+
+final_exploration_frames: 1.e+5
+final_epsilon: 0.01
+eval_epsilon: 0.001
+noisy_net_sigma: null
+replay_capacity: 10.e+6
+replay_start_size: 1.e+4
+prioritized: yes
+target_update_interval: 2.e+4
+
+encoder:
+  type: 'vqvae'
+  img_size: 64
+  data_type: 'pixelcoord' # pixel / coord / pixelcoord
+  vqvae:
+    encoder_version: 'vqvae_pixelcoord_official'
+    reward_type: 'comb' # sparse / dense / comb
+    load_epoch: 'mineRL/27gmv5df/checkpoints/epoch=24-step=3124.ckpt'
+    num_hiddens: 64
+    num_residual_hiddens: 32
+    num_residual_layers: 2
+    embedding_dim: 256
+    num_embeddings: 10
+    commitment_cost: 0.25
+  curl:
+    encoder_version: 'curl_exp_0'
+    load_epoch: 'mineRL/10d8jeqr/checkpoints/epoch=299-step=2099.ckpt'
+    embedding_dim: 128
+    path_goal_states: './goal_states/CT8_real_biome_curl_kmeans_10'

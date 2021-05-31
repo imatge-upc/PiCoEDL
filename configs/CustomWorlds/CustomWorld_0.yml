@@ -1,0 +1,35 @@
+num: 0
+x: 0
+y: 73
+z: 0
+barrier: 50
+
+
+# Mean and variance for normalizing input coordinates
+coords:
+  mean: [-1.008789, 68.02647, -4.984553]
+  std: [21.146933, 3.8185706, 20.964117]
+
+
+# Diamond Block location. y coordinate will be overwrited by surface's y
+
+dx: -16
+dy: 0
+dz: 14
+
+# """
+# Direction types:
+#   'random': 360 possible directions
+#   'single': 1 possible direction
+#   'cardinal': north/south/west/east
+# """
+
+direction: 'random'  # random/single/discrete
+
+# """
+# random_position: False -> starts at (x,z)
+# random_position: True -> starts at random position in range: (x-range, z-range) to (x+range, z+range)
+# """
+
+random_position: False
+range: 45

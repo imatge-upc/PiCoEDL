@@ -1,0 +1,32 @@
+experiment: 'curl_official_simple_0'
+environment: 'MineRLNavigate-v0'
+trajectories: ['CustomTrajectories14']
+epochs: 300
+batch_size: 128
+lr: 0.001
+split: 0.90
+tau: 0.005
+soft_update: 2
+img_size: 64
+delay: yes
+curl:
+  data_type: 'pixel'
+  k_std: 5
+  k_mean: 15
+  z_dim: 128
+test:
+  type: 'reward'  # index / reward / embed / centroides
+  shuffle: no
+  limit: 19000 # null / ~19000
+  path_goal_states: './goal_states/curl_official_simple_0'
+  # path_weights: './curl_1.0/mineRL/1042bq9w/checkpoints/epoch=499-step=302999.ckpt'
+  # path_weights: './curl_exp_0/mineRL/10d8jeqr/checkpoints/epoch=299-step=2099.ckpt'
+  # path_weights: './curl_exp_2/mineRL/h7yt76lr/checkpoints/epoch=76-step=1643025.ckpt'
+
+  # path_weights: 'curl_official_CW0/mineRL/17952c55/checkpoints/epoch=99-step=24999.ckpt'
+  # path_weights: 'curl_official_CW1/mineRL/3i42k1yd/checkpoints/epoch=99-step=24999.ckpt'
+  # path_weights: 'curl_official_CW2/mineRL/20abeqvg/checkpoints/epoch=99-step=24999.ckpt'
+  # path_weights: 'curl_official_CW4/mineRL/2ubgm37x/checkpoints/epoch=99-step=24999.ckpt'
+  # path_weights: 'curl_official_CW4.1/mineRL/63hmdj36/checkpoints/epoch=99-step=24999.ckpt'
+  path_weights: 'curl_official_simple_0/mineRL/3rcd6hji/checkpoints/epoch=119-step=169199.ckpt'
+

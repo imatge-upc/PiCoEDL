@@ -1,0 +1,85 @@
+experiment: 'vqvae_expert_embeddings_0_training'
+environment: 'MineRLNavigate-v0'
+trajectories: ['CustomTrajectories18']
+data_type: 'pixel' # pixel / coord / pixelcoord
+epochs: 100
+delay: no
+split: 0.90
+lr: 0.001
+batch_size: 256
+k_std: 5
+k_mean: 15
+vqvae:
+  coord_cost: 0.05
+  img_size: 64
+  num_hiddens: 64
+  num_residual_hiddens: 32
+  num_residual_layers: 2
+  embedding_dim: 256
+  num_embeddings: 10
+  commitment_cost: 0.25
+  decay: 0.99
+  reward_type: 'sparse' # sparse / dense / comb
+test:
+  type: 'index'  # index / reward / embed / centroides
+  shuffle: no
+  limit: null # null / ~19000
+  # path_weights: './vqvae_0.3/mineRL/1c4o6jgy/checkpoints/epoch=499-step=37999.ckpt'
+  # path_weights: './vqvae_1.0/mineRL/32lwarh6/checkpoints/epoch=199-step=21599.ckpt'
+  # path_weights: './vqvae_1.1/mineRL/315ksn7x/checkpoints/epoch=203-step=22031.ckpt'
+  # path_weights: './vqvae_1.2/mineRL/3qtc0w0y/checkpoints/epoch=131-step=14255.ckpt'
+  # path_weights: './vqvae_2.0/mineRL/kbsmulhw/checkpoints/epoch=49-step=4499.ckpt'
+  # path_weights: './vqvae_sweep_1/mineRL/96qj9btc/checkpoints/epoch=44-step=4859.ckpt'
+  # path_weights: 'vqvae_3.1/mineRL/8ykl37mx/checkpoints/epoch=59-step=5399.ckpt'
+  # path_weights: 'vqvae_sweep_0/mineRL/8bbcrmgb/checkpoints/epoch=34-step=3149.ckpt'
+  # path_weights: 'vqvae_exp_0/mineRL/2n13fn6b/checkpoints/epoch=499-step=499.ckpt'
+  # path_weights: 'vqvae_exp_1/mineRL/mlq3n3be/checkpoints/epoch=39-step=11679.ckpt'
+  # path_weights: 'vqvae_CW_Simple_2/mineRL/l4ctccfy/checkpoints/epoch=39-step=4999.ckpt'
+  # path_weights: 'vqvae_CW0_realistic_pixels.0/mineRL/nqxebkf7/checkpoints/epoch=39-step=4999.ckpt'
+  # path_weights: 'vqvae_Expert_trajectories_kmeans.0/mineRL/awmhuqtd/checkpoints/epoch=13-step=3933.ckpt'
+  
+  # path_weights: 'vqvae_CW0_coords.0/mineRL/3kyxgwil/checkpoints/epoch=39-step=4999.ckpt'
+  # path_weights: 'vqvae_CW1_coords.0/mineRL/4zuudkn9/checkpoints/epoch=19-step=2499.ckpt'
+  # path_weights: 'vqvae_CW2_coords.0/mineRL/8qfsjqi8/checkpoints/epoch=19-step=2499.ckpt'
+  # path_weights: 'vqvae_CW4_coords.0/mineRL/2w75hv6i/checkpoints/epoch=32-step=4124.ckpt'
+  
+  # path_weights: 'vqvae_CW0_pixels_coords.sweep/mineRL/bzcz2xgd/checkpoints/epoch=24-step=3124.ckpt'
+  # path_weights: 'vqvae_CW0_pixels_coords.sweep/mineRL/svhkwk1m/checkpoints/epoch=24-step=3124.ckpt'
+  # path_weights: 'vqvae_CW0_pixels_coords.sweep/mineRL/f6tf83sm/checkpoints/epoch=24-step=3124.ckpt'
+  # path_weights: 'vqvae_CW0_pixels_coords.sweep/mineRL/fvco8j3o/checkpoints/epoch=24-step=3124.ckpt'
+  # path_weights: 'vqvae_CW0_pixels_coords.sweep/mineRL/u5u6vkax/checkpoints/epoch=24-step=3124.ckpt'
+
+  # path_weights: 'vqvae_CW4_pixels_coords.sweep/mineRL/54i8661t/checkpoints/epoch=24-step=3124.ckpt'
+  # path_weights: 'vqvae_CW4_pixels_coords.sweep/mineRL/kspr4rrg/checkpoints/epoch=24-step=3124.ckpt'
+  # path_weights: 'vqvae_CW4_pixels_coords.sweep/mineRL/84yk1zt4/checkpoints/epoch=24-step=3124.ckpt'
+  # path_weights: 'vqvae_CW4_pixels_coords.sweep/mineRL/qj2oy801/checkpoints/epoch=24-step=3124.ckpt'
+  # path_weights: 'vqvae_CW4_pixels_coords.sweep/mineRL/cb42ynnd/checkpoints/epoch=24-step=3124.ckpt'
+
+  # path_weights: 'vqvae_pixelcoord_official_CW0/mineRL/27gmv5df/checkpoints/epoch=24-step=3124.ckpt'
+  # path_weights: 'vqvae_pixelcoord_official_CW1/mineRL/puve8nd0/checkpoints/epoch=24-step=3124.ckpt'
+  # path_weights: 'vqvae_pixelcoord_official_CW2/mineRL/1dy6ypkx/checkpoints/epoch=24-step=3124.ckpt'
+  # path_weights: 'vqvae_pixelcoord_official_CW4/mineRL/1x6kitto/checkpoints/epoch=24-step=3124.ckpt'
+
+  # path_weights: 'vqvae_pixel_official_CW0/mineRL/1cvf2aey/checkpoints/epoch=19-step=2499.ckpt'
+  # path_weights: 'vqvae_pixel_official_CW0_delayed/mineRL/24h6dq37/checkpoints/epoch=19-step=2499.ckpt'
+  # path_weights: 'vqvae_pixel_official_CW1/mineRL/3mnegrc7/checkpoints/epoch=19-step=2499.ckpt'
+  # path_weights: 'vqvae_pixel_official_CW2/mineRL/2f0rqtby/checkpoints/epoch=19-step=2499.ckpt'
+  # path_weights: 'vqvae_pixel_official_CW4/mineRL/13brhsva/checkpoints/epoch=19-step=2499.ckpt'
+  # path_weights: 'vqvae_pixel_official_CW4_delayed/mineRL/af1izyzb/checkpoints/epoch=29-step=3749.ckpt'
+  # path_weights: 'vqvae_pixel_official_CW4.1/mineRL/2byzng8a/checkpoints/epoch=49-step=6249.ckpt'
+
+  # path_weights: 'vqvae_official_simple_0/mineRL/10uhi71y/checkpoints/epoch=7-step=5639.ckpt'
+
+  path_weights: 'vqvae_Expert_pixels_0/mineRL/3l23j1s9/checkpoints/epoch=8-step=7831.ckpt'
+  # path_weights: 'vqvae_CW01_0/mineRL/m3gyl8fe/checkpoints/epoch=34-step=8749.ckpt'
+  # path_weights: 'vqvae_CW02_0/mineRL/3jt30u3a/checkpoints/epoch=33-step=8499.ckpt'
+  # path_weights: 'vqvae_CW04_0/mineRL/1w72u7wx/checkpoints/epoch=31-step=7999.ckpt'
+  # path_weights: 'vqvae_CW12_0/mineRL/3ncelca9/checkpoints/epoch=21-step=5499.ckpt'
+  # path_weights: 'vqvae_CW14_0/mineRL/1tjfzqhu/checkpoints/epoch=45-step=11499.ckpt'
+  # path_weights: 'vqvae_CW24_0/mineRL/3caouvcp/checkpoints/epoch=67-step=16999.ckpt'
+  # path_weights: 'vqvae_CW012_0/mineRL/3cygsbys/checkpoints/epoch=16-step=6374.ckpt'
+  # path_weights: 'vqvae_CW014_0/mineRL/2o4t8vxf/checkpoints/epoch=14-step=5624.ckpt'
+  # path_weights: 'vqvae_CW024_0/mineRL/2f1j34ed/checkpoints/epoch=17-step=6749.ckpt'
+  # path_weights: 'vqvae_CW124_0/mineRL/3506qodw/checkpoints/epoch=44-step=16874.ckpt'
+  # path_weights: 'vqvae_CW0-4_realistic_pixels.0/mineRL/1bvif2wt/checkpoints/epoch=13-step=6839.ckpt'
+  # path_weights: 'vqvae_CW0124_0/mineRL/31kqobuy/checkpoints/epoch=24-step=12499.ckpt'
